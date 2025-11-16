@@ -1,6 +1,6 @@
 # Activité pratique N°1 - XML DTD XSD XPath XSL SVG
 
-> [showcase](https://mmaous.github.io/ms-iibdcc/m1/s1/xml-webservices/tp1/index.html)
+> [showcase](https://mmaous.github.io/ms-iibdcc/m1/s1/xml-webservices/tp1/)
 
 Pour une démonstration complète de toutes les étapes, naviguez à .
 
