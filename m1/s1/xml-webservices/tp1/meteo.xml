@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- notre propre DTD "meteo.dtd" -->
+<!DOCTYPE meteo SYSTEM "meteo.dtd">
+
+<meteo>
+    <mesure date="2006-1-1">
+        <ville nom="Casa" temperature="22"/>
+        <ville nom="Rabat" temperature="20"/>
+    </mesure>
+    <mesure date="2006-1-2">
+        <ville nom="Casa" temperature="21"/>
+        <ville nom="Rabat" temperature="23"/>
+    </mesure>
+</meteo>
