@@ -1,4 +1,8 @@
-# Devoir Technologie XML - Météo
+# Activité pratique N°1 - XML DTD XSD XPath XSL SVG
+
+> [showcase](https://mmaous.github.io/ms-iibdcc/m1/s1/xml-webservices/tp1/index.html)
+
+Pour une démonstration complète de toutes les étapes, naviguez à .
 
 Un exercice de classe sur les technologies XML, DTD, XSD, et les transformations XSLT, basé sur le cours de M. Youssfi.
 
@@ -26,7 +30,3 @@ Ce projet démontre le cycle de vie complet d'un document XML :
 - meteo.html: Le fichier HTML généré par la transformation XSLT.
 
 - meteo.svg: Le fichier SVG généré par la transformation XSLT.
-
-## Showcase
-
-Pour une démonstration complète de toutes les étapes, naviguez à [gh pages](https://mmaous.github.io/ms-iibdcc/m1/s1/xml-webservices/tp1/index.html).
