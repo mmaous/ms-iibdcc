@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Activité pratique N°1 - XML DTD XSD XPath XSL SVG</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 text-gray-800 p-4 md:p-8">
+        <div class="mx-auto bg-white rounded-lg overflow-hidden">
+            <header class="text-dark p-6 border-b border-gray-200">
+                <h1 class="text-3xl font-bold">
+                    Activité pratique N°1 - XML DTD XSD XPath XSL SVG
+                </h1>
+                <p class="text-gray-500">
+                    Démonstration des étapes de l'exercice
+                </p>
+            </header>
+
+            <div class="p-6 md:p-10 space-y-12">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        1. Représentation graphique de l’arbre XML
+                    </h2>
+                    <div
+                        class="bg-gray-50 p-4 rounded-lg border border-gray-200"
+                    >
+                        <img
+                            src="représentation graphique de l’arbre XML.png"
+                            alt="Arbre XML"
+                            class="w-full h-auto rounded-md border border-gray-300"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        2. Document XML de base (meteo.xml)
+                    </h2>
+                    <pre id="xml-content">Chargement...</pre>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        3. DTD (meteo.dtd)
+                    </h2>
+                    <pre id="dtd-content">Chargement...</pre>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        4. Schéma XML (meteo.xsd)
+                    </h2>
+                    <pre id="xsd-content">Chargement...</pre>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        5. XML validé par XSD (meteo-xsd.xml)
+                    </h2>
+                    <pre id="xml-xsd-content">Chargement...</pre>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        6. XSLT vers HTML (meteo_to_html.xsl)
+                    </h2>
+                    <pre id="xsl-html-content">Chargement...</pre>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        7. Aperçu HTML Généré (meteo.html)
+                    </h2>
+                    <div class="bg-gray-50 rounded-lg border border-gray-200">
+                        <iframe
+                            src="meteo.html"
+                            class="w-full h-96 rounded-md"
+                            frameborder="0"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        8. XSLT vers SVG (meteo_to_svg.xsl)
+                    </h2>
+                    <pre id="xsl-svg-content">Chargement...</pre>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
+                        9. Aperçu SVG Généré (meteo.svg)
+                    </h2>
+                    <div
+                        class="bg-gray-50 p-4 rounded-lg border border-gray-200"
+                    >
+                        <p class="text-sm text-gray-600 mb-2">
+                            L'histogramme animé devrait se charger ci-dessous :
+                        </p>
+                        <iframe
+                            src="meteo.svg"
+                            class="w-full h-[500px] rounded-md border border-gray-300"
+                            frameborder="0"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            async function loadFileContent(fileUrl, targetElementId) {
+                const targetElement = document.getElementById(targetElementId);
+                if (!targetElement) return;
+
+                try {
+                    const response = await fetch(fileUrl);
+                    if (!response.ok) {
+                        throw new Error(
+                            `Erreur réseau: ${response.statusText}`,
+                        );
+                    }
+                    const text = await response.text();
+                    targetElement.textContent = text;
+                } catch (error) {
+                    console.error(
+                        "Erreur de chargement du fichier:",
+                        fileUrl,
+                        error,
+                    );
+                    targetElement.textContent = `Erreur: Impossible de charger le fichier `;
+                    targetElement.style.color = "#f87171";
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                loadFileContent("./meteo.xml", "xml-content");
+                loadFileContent("meteo.dtd", "dtd-content");
+                loadFileContent("meteo.xsd", "xsd-content");
+                loadFileContent("meteo-xsd.xml", "xml-xsd-content");
+                loadFileContent("meteo_to_html.xsl", "xsl-html-content");
+                loadFileContent("meteo_to_svg.xsl", "xsl-svg-content");
+            });
+        </script>
+    </body>
+</html>
