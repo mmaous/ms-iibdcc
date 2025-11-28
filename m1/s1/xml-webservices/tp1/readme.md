@@ -2,8 +2,6 @@
 
 > [showcase](https://mmaous.github.io/ms-iibdcc/m1/s1/xml-webservices/tp1/)
 
-Pour une démonstration complète de toutes les étapes, naviguez à .
-
 Un exercice de classe sur les technologies XML, DTD, XSD, et les transformations XSLT, basé sur le cours de M. Youssfi.
 
 Ce projet démontre le cycle de vie complet d'un document XML :
@@ -15,7 +13,9 @@ Ce projet démontre le cycle de vie complet d'un document XML :
 
 ## Contenu du projet
 
-- meteo.xml: Le document XML de base contenant les données de température.
+- meteo.xml: Le document XML de base contenant les données de température (dtd).
+
+- meteo.xml: Le document XML de base contenant les données de température (xsd).
 
 - meteo.dtd: La Définition de Type de Document (DTD) pour la validation.
 
