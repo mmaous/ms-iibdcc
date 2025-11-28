@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Activité pratique N°1 - XML DTD XSD XPath XSL SVG</title>
+        <title>Activité Pratique N° 2 Technologie XML</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -32,7 +32,7 @@
         <div class="mx-auto bg-white rounded-lg overflow-hidden">
             <header class="text-dark p-6 border-b border-gray-200">
                 <h1 class="text-3xl font-bold">
-                    Activité pratique N°1 - XML DTD XSD XPath XSL SVG
+                    Activité Pratique N° 2 Technologie XML
                 </h1>
                 <p class="text-gray-500">
                     Démonstration des étapes de l'exercice
@@ -48,7 +48,7 @@
                         class="bg-gray-50 p-4 rounded-lg border border-gray-200"
                     >
                         <img
-                            src="représentation graphique de l’arbre XML.png"
+                            src="arbre.png"
                             alt="Arbre XML"
                             class="w-full h-auto rounded-md border border-gray-300"
                         />
@@ -57,25 +57,25 @@
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        3. DTD (meteo.dtd)
+                        2.1 DTD (releve.dtd)
                     </h2>
                     <pre id="dtd-content">Chargement...</pre>
                 </div>
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        2. Document XML base sur DTD (meteo.xml)
+                        2.2 Document XML base sur DTD (releve.xml)
                     </h2>
                     <pre id="xml-content">Chargement...</pre>
                 </div>
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        4. Schéma XML (meteo.xsd)
+                        3.1 Schéma XML (releve.xsd)
                     </h2>
                     <pre id="xsd-content">Chargement...</pre>
                     <img
-                        src="meteo_schema.png"
+                        src="releve_schema.png"
                         alt="schema representation"
                         class="w-full h-auto rounded-md border border-gray-300"
                     />
@@ -83,25 +83,19 @@
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        5. XML validé par XSD (meteo_xsd.xml)
+                        3.2 XML validé par XSD (releve_xsd.xml)
                     </h2>
                     <pre id="xml-xsd-content">Chargement...</pre>
                 </div>
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        6. XSLT vers HTML (meteo_to_html.xsl)
+                        4. Feuille de style XSL (Affichage global et totaux) (releve_totaux.xsl, releve_totaux.html)
                     </h2>
-                    <pre id="xsl-html-content">Chargement...</pre>
-                </div>
-
-                <div class="border-b border-gray-200">
-                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        7. Aperçu HTML Généré (meteo.html)
-                    </h2>
+                    <pre id="xsl-total-content">Chargement...</pre>
                     <div class="bg-gray-50 rounded-lg border border-gray-200">
                         <iframe
-                            src="meteo.html"
+                            src="releve_totaux.html"
                             class="w-full h-96 rounded-md"
                             frameborder="0"
                         ></iframe>
@@ -110,24 +104,13 @@
 
                 <div class="border-b border-gray-200">
                     <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        8. XSLT vers SVG (meteo_to_svg.xsl)
+                        5. Feuille de style XSL (Opérations CREDIT uniquement). (releve_credit.xsl, releve_credit.html)
                     </h2>
-                    <pre id="xsl-svg-content">Chargement...</pre>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-semibold mb-3 text-gray-900">
-                        9. Aperçu SVG Généré (meteo.svg)
-                    </h2>
-                    <div
-                        class="bg-gray-50 p-4 rounded-lg border border-gray-200"
-                    >
-                        <p class="text-sm text-gray-600 mb-2">
-                            L'histogramme animé devrait se charger ci-dessous :
-                            (right-click -> reload frame)
-                        </p>
+                    <pre id="xsl-credit-content">Chargement...</pre>
+                    <div class="bg-gray-50 rounded-lg border border-gray-200">
                         <iframe
-                            src="meteo.svg"
-                            class="w-full h-[500px] rounded-md border border-gray-300"
+                            src="releve_credit.html"
+                            class="w-full h-96 rounded-md"
                             frameborder="0"
                         ></iframe>
                     </div>
@@ -161,12 +144,12 @@
             }
 
             document.addEventListener("DOMContentLoaded", () => {
-                loadFileContent("./meteo.xml", "xml-content");
-                loadFileContent("meteo.dtd", "dtd-content");
-                loadFileContent("meteo.xsd", "xsd-content");
-                loadFileContent("meteo_xsd.xml", "xml-xsd-content");
-                loadFileContent("meteo_to_html.xsl", "xsl-html-content");
-                loadFileContent("meteo_to_svg.xsl", "xsl-svg-content");
+                loadFileContent("./releve.xml", "xml-content");
+                loadFileContent("releve.dtd", "dtd-content");
+                loadFileContent("releve.xsd", "xsd-content");
+                loadFileContent("releve_xsd.xml", "xml-xsd-content");
+                loadFileContent("releve_totaux.xsl", "xsl-total-content");
+                loadFileContent("releve_credit.xsl", "xsl-credit-content");
             });
         </script>
     </body>
