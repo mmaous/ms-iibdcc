@@ -1,2 +1,0 @@
-partie1.dao.DaoImpl
-partie1.metier.MetierImpl
