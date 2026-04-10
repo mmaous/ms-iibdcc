@@ -1,4 +1,5 @@
 package partie1.metier;
+
 import partie1.dao.IDao;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
