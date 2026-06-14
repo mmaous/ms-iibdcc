@@ -3,3 +3,21 @@
 stash/
 target/
 .idea/
+# Virtual Environments (Where your deps live)
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints and caches
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+__pycache__/
+*.pyc
+
+# Data and large files (adjust to your folder names)
+data/
+outputs/
+*.csv
+*.json
+*.pkl
