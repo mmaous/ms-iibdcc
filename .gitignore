@@ -21,3 +21,11 @@ outputs/
 *.csv
 *.json
 *.pkl
+
+# --- Python / uv ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.python-version
+uv.lock
