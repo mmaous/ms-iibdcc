@@ -3,6 +3,8 @@
 stash/
 target/
 .idea/
+.env
+.env.*
 # Virtual Environments (Where your deps live)
 .venv/
 venv/
