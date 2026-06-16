@@ -1,0 +1,4 @@
+2026-05-01 10:15:22 INFO User login success
+2026-05-01 10:16:05 ERROR Payment service unavailable
+2026-05-01 10:17:41 INFO Order created
+2026-05-01 10:18:32 WARN Slow database query
