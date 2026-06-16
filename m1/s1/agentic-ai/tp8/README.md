@@ -25,6 +25,11 @@
 * run `uv run --active python conditional_workflow.py`
 ![conditional_workflow](out/conditional_workflow.png)
 
+* result :
+
+![graph2](graph2.png)
+
+
 ## Workflow Loop
 
 * run `uv run --active python workflow_loop.py`
