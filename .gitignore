@@ -17,12 +17,6 @@ ENV/
 __pycache__/
 *.pyc
 
-# Data and large files (adjust to your folder names)
-data/
-outputs/
-*.csv
-*.json
-*.pkl
 
 # --- Python / uv ---
 __pycache__/
