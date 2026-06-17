@@ -1,0 +1,184 @@
+
+--- 1. Data Loading & Exploration ---
+root
+ |-- rental_id: integer (nullable = true)
+ |-- user_id: string (nullable = true)
+ |-- age: integer (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- start_time: timestamp (nullable = true)
+ |-- end_time: timestamp (nullable = true)
+ |-- start_station: string (nullable = true)
+ |-- end_station: string (nullable = true)
+ |-- duration_minutes: integer (nullable = true)
+ |-- price: double (nullable = true)
+
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+|rental_id|user_id|age|gender|         start_time|           end_time|       start_station|         end_station|duration_minutes|price|
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+|        1|  U1857| 35|     M|2025-01-23 19:35:00|2025-01-23 19:47:00|Station Quartier ...|Station Centre-Ville|              12|  7.4|
+|        2|  U3212| 39|     F|2025-03-22 10:05:00|2025-03-22 10:44:00|Station Aéroport Bus|        Station Gare|              39|  9.3|
+|        3|  U7186| 22|     M|2024-04-04 10:09:00|2024-04-04 10:46:00|Station Aéroport Bus|        Station Gare|              37|  9.8|
+|        4|  U8055| 54|     M|2024-12-17 18:51:00|2024-12-17 19:56:00|        Station Souk|      Station Marina|              65| 12.4|
+|        5|  U4389| 56|     F|2024-01-13 19:57:00|2024-01-13 20:37:00|       Station Stade|     Station Hôpital|              40| 10.3|
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+only showing top 5 rows
+Total rentals in dataset: 5000
+
+--- 3. Basic SQL Queries ---
+Rentals > 30 minutes:
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+|rental_id|user_id|age|gender|         start_time|           end_time|       start_station|         end_station|duration_minutes|price|
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+|        2|  U3212| 39|     F|2025-03-22 10:05:00|2025-03-22 10:44:00|Station Aéroport Bus|        Station Gare|              39|  9.3|
+|        3|  U7186| 22|     M|2024-04-04 10:09:00|2024-04-04 10:46:00|Station Aéroport Bus|        Station Gare|              37|  9.8|
+|        4|  U8055| 54|     M|2024-12-17 18:51:00|2024-12-17 19:56:00|        Station Souk|      Station Marina|              65| 12.4|
+|        5|  U4389| 56|     F|2024-01-13 19:57:00|2024-01-13 20:37:00|       Station Stade|     Station Hôpital|              40| 10.3|
+|        8|  U2200| 64|     M|2024-07-12 17:05:00|2024-07-12 17:57:00|       Station Stade|Station Centre-Ville|              52| 12.7|
+|        9|  U6955| 18|     F|2025-10-16 13:31:00|2025-10-16 14:06:00|Station Parc Central|Station Centre-Ville|              35|  9.8|
+|       10|  U9915| 48| Autre|2025-01-22 15:29:00|2025-01-22 16:01:00|  Station Université|    Station Corniche|              32|  9.8|
+|       14|  U7865| 22|     F|2024-03-21 06:56:00|2024-03-21 07:29:00|  Station Technopark|  Station Université|              33| 10.3|
+|       20|  U6589| 53|     F|2025-05-19 11:25:00|2025-05-19 12:00:00|    Station Corniche|       Station Stade|              35|  9.8|
+|       23|  U6928| 60|     F|2024-12-17 21:48:00|2024-12-17 22:22:00|     Station Hôpital|Station Quartier ...|              34|  8.8|
+|       24|  U2023| 44|     M|2025-07-26 17:23:00|2025-07-26 18:58:00|      Station Marina|  Station Université|              95| 17.0|
+|       29|  U8592| 50|     F|2025-12-23 18:57:00|2025-12-23 19:50:00|       Station Stade|      Station Marina|              53| 11.2|
+|       32|  U4672| 36|     F|2025-07-24 14:51:00|2025-07-24 15:31:00|        Station Gare|Station Aéroport Bus|              40|  9.8|
+|       34|  U6840| 27|     M|2024-02-08 14:58:00|2024-02-08 15:46:00|Station Parc Central|      Station Marina|              48| 11.0|
+|       44|  U4750| 21|     M|2024-10-21 12:08:00|2024-10-21 12:44:00|        Station Gare|Station Centre-Ville|              36|  9.3|
+|       46|  U1544| 56|     M|2024-12-24 17:48:00|2024-12-24 18:20:00|     Station Hôpital|Station Parc Central|              32|  9.8|
+|       47|  U5819| 23|     M|2024-04-17 11:38:00|2024-04-17 12:11:00|  Station Université|  Station Technopark|              33|  8.8|
+|       49|  U9923| 28|     M|2024-07-16 12:11:00|2024-07-16 13:07:00|      Station Marina|    Station Corniche|              56| 11.7|
+|       50|  U2661| 35|     M|2025-01-04 07:16:00|2025-01-04 08:03:00|        Station Gare|  Station Université|              47| 10.0|
+|       52|  U6053| 46|     F|2025-09-26 08:59:00|2025-09-26 09:36:00|Station Centre-Ville|        Station Gare|              37|  8.8|
++---------+-------+---+------+-------------------+-------------------+--------------------+--------------------+----------------+-----+
+only showing top 20 rows
+Rentals starting at Station A:
++---------+-------+---+------+----------+--------+-------------+-----------+----------------+-----+
+|rental_id|user_id|age|gender|start_time|end_time|start_station|end_station|duration_minutes|price|
++---------+-------+---+------+----------+--------+-------------+-----------+----------------+-----+
++---------+-------+---+------+----------+--------+-------------+-----------+----------------+-----+
+
+Total Revenue:
++-----------------+
+|    total_revenue|
++-----------------+
+|41755.70000000009|
++-----------------+
+
+
+--- 4. Aggregation Queries ---
+Rentals per start station:
++--------------------+-------------+
+|       start_station|total_rentals|
++--------------------+-------------+
+|        Station Souk|          436|
+|        Station Gare|          384|
+|Station Parc Central|          433|
+|      Station Marina|          443|
+|  Station Université|          415|
+|Station Aéroport Bus|          408|
+|  Station Technopark|          430|
+|       Station Stade|          374|
+|     Station Hôpital|          447|
+|    Station Corniche|          404|
+|Station Quartier ...|          416|
+|Station Centre-Ville|          410|
++--------------------+-------------+
+
+Average rental duration per start station:
++--------------------+------------------+
+|       start_station|      avg_duration|
++--------------------+------------------+
+|        Station Souk|25.594036697247706|
+|        Station Gare|24.919270833333332|
+|Station Parc Central|24.099307159353348|
+|      Station Marina| 24.86681715575621|
+|  Station Université|25.113253012048194|
+|Station Aéroport Bus| 25.67401960784314|
+|  Station Technopark|25.195348837209302|
+|       Station Stade| 24.28609625668449|
+|     Station Hôpital|24.514541387024607|
+|    Station Corniche| 25.81188118811881|
+|Station Quartier ...|23.432692307692307|
+|Station Centre-Ville| 24.25609756097561|
++--------------------+------------------+
+
+Station with the highest number of rentals:
++---------------+------------+
+|  start_station|rental_count|
++---------------+------------+
+|Station Hôpital|         447|
++---------------+------------+
+
+
+--- 5. Time-Based Analysis ---
+Hour extracted from start_time:
++-------------------+----------+
+|         start_time|start_hour|
++-------------------+----------+
+|2025-01-23 19:35:00|        19|
+|2025-03-22 10:05:00|        10|
+|2024-04-04 10:09:00|        10|
+|2024-12-17 18:51:00|        18|
+|2024-01-13 19:57:00|        19|
++-------------------+----------+
+only showing top 5 rows
+Bikes rented per hour (Peak Hours):
++-----------+-------------+
+|hour_of_day|rentals_count|
++-----------+-------------+
+|         19|          507|
+|         18|          503|
+|         17|          499|
+|          9|          467|
+|          7|          452|
+|          8|          431|
+|         13|          285|
+|         10|          261|
+|         12|          245|
+|         11|          242|
+|         14|          242|
+|         16|          225|
+|         15|          224|
+|          6|           90|
+|         20|           80|
+|         21|           72|
+|          1|           27|
+|          0|           27|
+|         22|           22|
+|          3|           21|
++-----------+-------------+
+only showing top 20 rows
+Most popular start station in the morning (7 AM - 12 PM):
++------------------+---------------+
+|     start_station|morning_rentals|
++------------------+---------------+
+|Station Technopark|            188|
++------------------+---------------+
+
+
+--- 6. User Behavior Analysis ---
+Average age of users:
++-----------+
+|average_age|
++-----------+
+|     41.524|
++-----------+
+
+User count by gender:
++------+----------+
+|gender|user_count|
++------+----------+
+|     F|      2286|
+|     M|      2542|
+| Autre|       172|
++------+----------+
+
+Age group that rents bicycles the most:
++---------+-------------+
+|age_group|total_rentals|
++---------+-------------+
+|      51+|         1567|
++---------+-------------+
+
+
+Process finished with exit code 0
