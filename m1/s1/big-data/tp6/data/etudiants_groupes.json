@@ -1,0 +1,37 @@
+[
+    {
+        "id_etudiant": "101",
+        "nom": "Amine",
+        "filiere": "II-BDDC",
+        "note": "15.5",
+        "groupe": "Section_A"
+    },
+    {
+        "id_etudiant": "102",
+        "nom": "Sara",
+        "filiere": "II-BDDC",
+        "note": "14.0",
+        "groupe": "Section_A"
+    },
+    {
+        "id_etudiant": "103",
+        "nom": "Youssef",
+        "filiere": "G-INFO",
+        "note": "12.5",
+        "groupe": "Section_B"
+    },
+    {
+        "id_etudiant": "104",
+        "nom": "Layla",
+        "filiere": "II-BDDC",
+        "note": "16.0",
+        "groupe": "Section_A"
+    },
+    {
+        "id_etudiant": "105",
+        "nom": "Hamza",
+        "filiere": "G-INFO",
+        "note": "11.0",
+        "groupe": "Section_B"
+    }
+]

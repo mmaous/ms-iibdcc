@@ -1,0 +1,7 @@
+Rapport Final des Inscriptions Étudiants
+=========================================
+Nombre total d'étudiants inscrits : 5
+
+Répartition par filière :
+ - II-BDDC : 3 étudiants
+ - G-INFO : 2 étudiants
