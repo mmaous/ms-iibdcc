@@ -506,6 +506,7 @@
 [2026-06-22T14:17:14.460+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:14.459+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-06-22T14:17:14.466+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:14.466+0000] {dag.py:3823} INFO - Setting next_dagrun for pipeline_inscription_etudiants to None, run_after=None
 [2026-06-22T14:17:14.477+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_inscription_etudiants.py took 0.046 seconds
+<<<<<<< HEAD
 [2026-06-22T14:17:44.873+0000] {processor.py:161} INFO - Started process (PID=15426) to work on /opt/airflow/dags/pipeline_inscription_etudiants.py
 [2026-06-22T14:17:44.874+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipeline_inscription_etudiants.py for tasks to queue
 [2026-06-22T14:17:44.874+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:44.874+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_inscription_etudiants.py
@@ -520,3 +521,5 @@
 [2026-06-22T14:18:15.392+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:18:15.392+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-06-22T14:18:15.400+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:18:15.400+0000] {dag.py:3823} INFO - Setting next_dagrun for pipeline_inscription_etudiants to None, run_after=None
 [2026-06-22T14:18:15.411+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipeline_inscription_etudiants.py took 0.055 seconds
+=======
+>>>>>>> af1004172f94fbcae0ced3649be8bce1a8cd57db

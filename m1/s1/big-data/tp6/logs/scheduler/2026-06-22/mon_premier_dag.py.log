@@ -506,6 +506,7 @@
 [2026-06-22T14:17:14.584+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:14.583+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-06-22T14:17:14.590+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:14.590+0000] {dag.py:3823} INFO - Setting next_dagrun for mon_premier_dag to None, run_after=None
 [2026-06-22T14:17:14.600+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mon_premier_dag.py took 0.043 seconds
+<<<<<<< HEAD
 [2026-06-22T14:17:44.999+0000] {processor.py:161} INFO - Started process (PID=15428) to work on /opt/airflow/dags/mon_premier_dag.py
 [2026-06-22T14:17:44.999+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mon_premier_dag.py for tasks to queue
 [2026-06-22T14:17:45.000+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:17:45.000+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mon_premier_dag.py
@@ -520,3 +521,5 @@
 [2026-06-22T14:18:15.509+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:18:15.509+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-06-22T14:18:15.515+0000] {logging_mixin.py:188} INFO - [2026-06-22T14:18:15.515+0000] {dag.py:3823} INFO - Setting next_dagrun for mon_premier_dag to None, run_after=None
 [2026-06-22T14:18:15.524+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mon_premier_dag.py took 0.040 seconds
+=======
+>>>>>>> af1004172f94fbcae0ced3649be8bce1a8cd57db

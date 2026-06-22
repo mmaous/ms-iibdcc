@@ -800,6 +800,7 @@ File Path                                            PID    Runtime      # DAGs 
 /opt/airflow/dags/pipeline_big_data_python.py                                 1           0  0.06s           2026-06-22T14:16:44
 /opt/airflow/dags/pipeline_big_data_parallele.py                              1           0  0.08s           2026-06-22T14:16:44
 ================================================================================
+<<<<<<< HEAD
 [2026-06-22T14:17:31.708+0000] {manager.py:879} INFO - 
 ================================================================================
 DAG File Processing Stats
@@ -834,3 +835,5 @@ File Path                                            PID    Runtime      # DAGs 
 /opt/airflow/dags/pipeline_big_data_parallele.py                              1           0  0.08s           2026-06-22T14:18:15
 ================================================================================
 [2026-06-22T14:18:45.535+0000] {manager.py:451} INFO - Exiting gracefully upon receiving signal 15
+=======
+>>>>>>> af1004172f94fbcae0ced3649be8bce1a8cd57db
