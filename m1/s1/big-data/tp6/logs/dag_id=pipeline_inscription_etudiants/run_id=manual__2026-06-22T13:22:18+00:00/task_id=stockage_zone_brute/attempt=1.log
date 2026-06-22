@@ -1,0 +1,14 @@
+[2026-06-22T13:22:25.306+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_inscription_etudiants.stockage_zone_brute manual__2026-06-22T13:22:18+00:00 [queued]>
+[2026-06-22T13:22:25.312+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_inscription_etudiants.stockage_zone_brute manual__2026-06-22T13:22:18+00:00 [queued]>
+[2026-06-22T13:22:25.312+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-06-22T13:22:25.319+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): stockage_zone_brute> on 2026-06-22 13:22:18+00:00
+[2026-06-22T13:22:25.322+0000] {standard_task_runner.py:60} INFO - Started process 182 to run task
+[2026-06-22T13:22:25.324+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'pipeline_inscription_etudiants', 'stockage_zone_brute', 'manual__2026-06-22T13:22:18+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_inscription_etudiants.py', '--cfg-path', '/tmp/tmpypwuy7sc']
+[2026-06-22T13:22:25.326+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask stockage_zone_brute
+[2026-06-22T13:22:25.354+0000] {task_command.py:423} INFO - Running <TaskInstance: pipeline_inscription_etudiants.stockage_zone_brute manual__2026-06-22T13:22:18+00:00 [running]> on host fa0ed645f05f
+[2026-06-22T13:22:25.394+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_inscription_etudiants' AIRFLOW_CTX_TASK_ID='stockage_zone_brute' AIRFLOW_CTX_EXECUTION_DATE='2026-06-22T13:22:18+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-22T13:22:18+00:00'
+[2026-06-22T13:22:25.395+0000] {logging_mixin.py:188} INFO - Étape 2: Fichier stocké avec succès dans la zone brute (153 octets).
+[2026-06-22T13:22:25.395+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-06-22T13:22:25.399+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=pipeline_inscription_etudiants, task_id=stockage_zone_brute, execution_date=20260622T132218, start_date=20260622T132225, end_date=20260622T132225
+[2026-06-22T13:22:25.416+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-06-22T13:22:25.434+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
