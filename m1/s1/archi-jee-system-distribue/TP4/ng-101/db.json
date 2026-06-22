@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Computer",
+      "price": 1300,
+      "selected": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

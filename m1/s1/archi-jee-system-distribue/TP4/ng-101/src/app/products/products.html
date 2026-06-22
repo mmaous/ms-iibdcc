@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">Products List</div>
+  <div class="card-body">
+    @if (products) {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Selected</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (p of products; track p.id) {
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td>
+            @if (p.selected) {
+            <i class="bi bi-check-circle text-success"></i>
+            } @else {
+            <i class="bi bi-circle text-secondary"></i>
+            }
+          </td>
+          <td>
+            <button (click)="handleDelete(p)" class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    }
+  </div>
+</div>
+<!--<div><pre>{{ products | json }}</pre></div>-->
