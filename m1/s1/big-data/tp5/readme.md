@@ -27,12 +27,6 @@ podman exec -it kafka-broker /opt/kafka/bin/kafka-topics.sh --create --topic cli
 ![api-response](screenshots/api-response.png)
 
 
-### 
-
-Franchement, voilà ce que tu peux écrire directement dans ton rapport. J'ai rédigé ça avec un style d'étudiant (clair, simple, sans faire "robot" ou trop formel), comme si tu expliquais ton projet au prof.
-
----
-
 ### — une courte description de l’architecture réalisée ;
 
 Pour ce TP, on a mis en place une architecture de traitement de flux de données en temps réel en utilisant **Apache Kafka** et la dep **Kafka Streams**. L'ensemble du projet fonctionne avec un broker Kafka (lancé sous Podman) et est divisé en trois grandes parties :

@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>ma.enset</groupId>
-    <artifactId>tp5-kafka</artifactId>
+    <artifactId>tp5</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tp5-kafka</name>
     <description>tp5-kafka</description>
