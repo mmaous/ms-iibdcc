@@ -1,55 +1,6 @@
-.DS_Store
-*.class
-stash/
-target/
-.idea/
-.env
-.env.*
-# Virtual Environments (Where your deps live)
-.venv/
-venv/
-env/
-ENV/
-
-# Jupyter Notebook checkpoints and caches
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/*
-__pycache__/
-*.pyc
-
-
-# --- Python / uv ---
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-.python-version
-uv.lock
-.langgraph_api/
-
-# mobile 
-
-# Built artifacts
-*.apk
-*.aar
-*.ap_
-*.der
-*.class
-**/build/
-build/
-
-# Android Studio local configs
-.gradle/
-local.properties
-.idea/caches/
-.idea/modules.xml
-.idea/workspace.xml
-.idea/nav/
-.idea/assetWizardSettings.xml
-.idea/modules/
-*.iml
-
-# macOS files (Crucial for your M1 Mac)
+# ==============================================================================
+# OS / System Files
+# ==============================================================================
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -60,5 +11,177 @@ local.properties
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
-# Log files
+# ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env.*
+*.jks
+*.keystore
+google-services.json
+**/android/key.properties
+
+# ==============================================================================
+# Logs & Temporary Files
+# ==============================================================================
 *.log
+*~
+*.swp
+stash/
+hs_err_pid*
+
+# ==============================================================================
+# Python & Jupyter
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.venv/
+venv/
+env/
+ENV/
+.python-version
+uv.lock
+.langgraph_api/
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ==============================================================================
+# IDEs & Editors (JetBrains, Eclipse, etc.)
+# ==============================================================================
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+atlassian-ide-plugin.xml
+.classpath
+.project
+.cproject
+.settings/
+.mtj.tmp/
+
+# ==============================================================================
+# Dart & Flutter
+# ==============================================================================
+.dart_tool/
+.packages
+pubspec.lock
+doc/api/
+**/doc/api/
+.flutter-plugins
+.flutter-plugins-dependencies
+.fvm/flutter_sdk
+.pub-cache/
+.pub/
+coverage/
+lib/generated_plugin_registrant.dart
+
+# Generated Javascript (Dart2JS)
+*.dart.js
+*.info.json
+*.js
+*.js_
+*.js.deps
+*.js.map
+
+# ==============================================================================
+# Android, Java & Build Artifacts
+# ==============================================================================
+# Built artifacts
+*.class
+*.apk
+*.aar
+*.ap_
+*.aab
+*.der
+*.dex
+*.war
+*.ear
+
+# Build directories
+build/
+**/build/
+/*/build/
+/*/*/build/
+/*/*/production
+out/
+/out/
+/*/out
+bin/
+gen/
+target/
+obj/
+
+# Gradle & Android Studio
+.gradle/
+**/android/.gradle
+local.properties
+**/android/local.properties
+captures/
+**/android/captures/
+.externalNativeBuild/
+.cxx/
+output.json
+*.hprof
+gen-external-apklibs
+proguard/
+.navigation/
+.signing/
+
+# Crashlytics / Fabric
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Android / Flutter wrappers
+**/android/**/gradle-wrapper.jar
+**/android/gradlew
+**/android/gradlew.bat
+**/android/**/GeneratedPluginRegistrant.java
+
+# Exceptions
+!/gradle/wrapper/gradle-wrapper.jar
+
+# ==============================================================================
+# iOS / XCode
+# ==============================================================================
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/xcuserdata
+**/ios/.generated/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# iOS Exceptions
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
