@@ -26,3 +26,39 @@ __pycache__/
 .python-version
 uv.lock
 .langgraph_api/
+
+# mobile 
+
+# Built artifacts
+*.apk
+*.aar
+*.ap_
+*.der
+*.class
+**/build/
+build/
+
+# Android Studio local configs
+.gradle/
+local.properties
+.idea/caches/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/nav/
+.idea/assetWizardSettings.xml
+.idea/modules/
+*.iml
+
+# macOS files (Crucial for your M1 Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Log files
+*.log
