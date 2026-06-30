@@ -26,7 +26,7 @@ export class CustomersComponent implements OnInit {
     this.searchFormGroup = this.fb.group({
       keyword: this.fb.control(''),
     });
-    // Load all customers initially
+    
     this.handleSearchCustomers();
   }
 
@@ -46,7 +46,7 @@ export class CustomersComponent implements OnInit {
 
     this.customerService.deleteCustomer(c.id).subscribe({
       next: (resp) => {
-        // Refresh the list after deletion
+        
         this.handleSearchCustomers();
       },
       error: (err) => {

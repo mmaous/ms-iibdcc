@@ -30,7 +30,7 @@ export class AccountsService {
     }
 
     public transfer(accountSource: string, accountDestination: string, amount: number, description: string) {
-        // The backend DTO we created expects 'accountSource' and 'accountDestination'
+        
         return this.http.post(this.apiUrl + '/accounts/transfer', { accountSource, accountDestination, amount });
     }
 }

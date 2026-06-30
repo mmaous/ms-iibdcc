@@ -23,10 +23,10 @@ export class CustomerAccountsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Extract the ID from the URL (/admin/customer-accounts/:id)
+    
     this.customerId = this.route.snapshot.params['id'];
 
-    // Fetch the accounts
+    
     this.accounts$ = this.customerService.getCustomerAccounts(this.customerId).pipe(
         catchError(err => {
           this.errorMessage = err.message;
@@ -36,7 +36,7 @@ export class CustomerAccountsComponent implements OnInit {
   }
 
   handleViewOperations(account: BankAccount) {
-    // This will pass the account ID to the main Accounts component (which we build next)
+    
     this.router.navigateByUrl('/admin/accounts', { state: { accountId: account.id } });
   }
 }

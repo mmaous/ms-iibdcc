@@ -36,7 +36,7 @@ export class NewCustomerComponent implements OnInit {
     this.customerService.saveCustomer(customer).subscribe({
       next: (data) => {
         alert('Client successfully registered.');
-        // Redirect back to the customer list
+        
         this.router.navigateByUrl('/admin/customers');
       },
       error: (err) => {

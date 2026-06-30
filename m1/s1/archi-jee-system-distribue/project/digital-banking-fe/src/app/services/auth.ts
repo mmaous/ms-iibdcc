@@ -38,7 +38,7 @@ export class AuthService {
     this.accessToken = undefined;
     this.username = undefined;
     this.roles = undefined;
-    window.localStorage.removeItem('JWT_TOKEN'); // Clear storage
+    window.localStorage.removeItem('JWT_TOKEN'); 
     this.router.navigate(['/login']);
   }
 

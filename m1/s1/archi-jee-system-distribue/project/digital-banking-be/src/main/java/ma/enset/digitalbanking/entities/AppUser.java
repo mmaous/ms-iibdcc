@@ -17,5 +17,5 @@ public class AppUser {
     
     private String password;
     
-    private String roles; // e.g., "USER,ADMIN"
+    private String roles; 
 }
