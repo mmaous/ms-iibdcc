@@ -2,18 +2,11 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login';
 import { AdminTemplateComponent } from './admin-template/admin-template';
 import { authGuard } from './guards/auth.guard';
-import { Component } from '@angular/core';
 import { CustomersComponent } from './customers/customers';
 import { NewCustomerComponent } from './new-customer/new-customer';
 import {CustomerAccountsComponent} from "./customer-accounts/customer-accounts";
 import {AccountsComponent} from "./accounts/accounts";
-
-//  dummy component
-@Component({
-  template:
-    '<h2 class="text-2xl font-bold text-gray-900">Welcome to the Dashboard</h2><p class="text-gray-500 mt-2">Select a menu item above.</p>',
-})
-export class DummyDashboardComponent {}
+import {DashboardComponent} from "./dashboard/dashboard";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,7 +16,7 @@ export const routes: Routes = [
     component: AdminTemplateComponent,
     canActivate: [authGuard],
     children: [
-      { path: 'dashboard', component: DummyDashboardComponent },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'customers', component: CustomersComponent },
       { path: 'new-customer', component: NewCustomerComponent },
       { path: 'customer-accounts/:id', component: CustomerAccountsComponent },

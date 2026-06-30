@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string | undefined;
-  isLoading: boolean = false; // Added loading state
+  isLoading: boolean = false; 
 
   constructor(
     private fb: FormBuilder,
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    this.isLoading = true; // Start spinner
-    this.errorMessage = undefined; // Clear previous errors
+    this.isLoading = true; 
+    this.errorMessage = undefined; 
 
     const { username, password } = this.loginForm.value;
 
@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
       next: (data) => {
         this.authService.loadProfile(data);
         this.router.navigate(['/admin/dashboard']);
-        this.isLoading = false; // Stop spinner on success
+        this.isLoading = false; 
       },
       error: (err) => {
         this.errorMessage = 'Access Denied: Invalid Credentials.';
-        this.isLoading = false; // Stop spinner on failure
+        this.isLoading = false; 
         console.error(err);
       },
     });

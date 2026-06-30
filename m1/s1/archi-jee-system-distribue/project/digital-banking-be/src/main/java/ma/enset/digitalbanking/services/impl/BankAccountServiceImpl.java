@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -129,7 +130,7 @@ public class BankAccountServiceImpl implements IBankAccountService {
             new BankAccountNotFoundException("BankAccount not found")
         );
 
-    // Hardware/System constraint: Prevent negative balance beyond constraints to maintain data integrity
+    
     if (bankAccount.getBalance() < amount) {
       throw new BalanceNotSufficientException("Insufficient Balance");
     }
@@ -172,7 +173,7 @@ public class BankAccountServiceImpl implements IBankAccountService {
       String accountIdDestination,
       double amount
   ) {
-    // Debit first. If it fails due to insufficient funds, the transaction rolls back safely.
+    
     debit(accountIdSource, amount, "Transfer to " + accountIdDestination);
     credit(
         accountIdDestination,
@@ -221,4 +222,5 @@ public class BankAccountServiceImpl implements IBankAccountService {
       }
     }).collect(Collectors.toList());
   }
+
 }

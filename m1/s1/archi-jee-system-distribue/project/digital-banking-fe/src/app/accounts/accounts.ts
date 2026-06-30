@@ -37,7 +37,7 @@ export class AccountsComponent implements OnInit {
       accountDestination: this.fb.control('')
     });
 
-    // Auto-load if navigated from the Customer Accounts view
+    
     const state = history.state;
     if (state && state.accountId) {
       this.accountFormGroup.controls['accountId'].setValue(state.accountId);
@@ -92,7 +92,7 @@ export class AccountsComponent implements OnInit {
     this.isProcessing = false;
     alert("Operation Successful");
     this.operationFormGroup.reset({ operationType: 'DEBIT', amount: 0, description: '', accountDestination: '' });
-    this.handleSearchAccount(); // Refresh history and balance
+    this.handleSearchAccount(); 
   }
 
   private handleError(err: any) {
