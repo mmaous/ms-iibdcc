@@ -1,0 +1,76 @@
+<div class="space-y-6">
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+        <form [formGroup]="accountFormGroup" (ngSubmit)="handleSearchAccount()" class="flex gap-4">
+            <div class="flex-1">
+                <input type="text" formControlName="accountId" placeholder="Enter Account ID to load history..."
+                       class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 outline-none">
+            </div>
+            <button type="submit" class="bg-gray-900 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-black">Search</button>
+        </form>
+    </div>
+
+    <ng-container *ngIf="accountObservable$ | async as account">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Account Status</h3>
+                    <p class="text-4xl font-bold">{{ account.balance | number:'1.2-2' }} <span class="text-xl text-gray-400">MAD</span></p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Type</th>
+                            <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase">Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr *ngFor="let op of (operationsObservable$ | async)">
+                            <td class="px-6 py-4 text-sm">{{ op.operationDate | date:'dd-MM-yyyy HH:mm' }}</td>
+                            <td class="px-6 py-4 text-sm font-medium" [ngClass]="op.type === 'DEBIT' ? 'text-red-600' : 'text-green-600'">{{ op.type }}</td>
+                            <td class="px-6 py-4 text-sm text-right font-mono">{{ op.amount | number:'1.2-2' }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 h-fit">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Execute Transaction</h3>
+                <form [formGroup]="operationFormGroup" (ngSubmit)="handleAccountOperation()" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Type</label>
+                        <select formControlName="operationType" class="w-full mt-1 p-2 border rounded-lg">
+                            <option value="DEBIT">Debit</option>
+                            <option value="CREDIT">Credit</option>
+                            <option value="TRANSFER">Transfer</option>
+                        </select>
+                    </div>
+
+                    <div *ngIf="operationFormGroup.value.operationType === 'TRANSFER'">
+                        <label class="block text-sm font-medium text-gray-700">Destination Account</label>
+                        <input formControlName="accountDestination" class="w-full mt-1 p-2 border rounded-lg" placeholder="Target Account ID">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Amount</label>
+                        <input type="number" formControlName="amount" class="w-full mt-1 p-2 border rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Description</label>
+                        <input type="text" formControlName="description" class="w-full mt-1 p-2 border rounded-lg">
+                    </div>
+
+                    <button type="submit" [disabled]="isProcessing" class="w-full bg-gray-900 text-white py-2.5 rounded-lg font-medium hover:bg-black">
+                        {{ isProcessing ? 'Processing...' : 'Confirm Operation' }}
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </ng-container>
+</div>

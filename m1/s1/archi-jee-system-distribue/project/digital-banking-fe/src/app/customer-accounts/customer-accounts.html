@@ -1,0 +1,61 @@
+<div class="space-y-6">
+
+    <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-900">Client Accounts <span class="text-gray-400 text-lg font-normal">#{{ customerId }}</span></h2>
+        <a routerLink="/admin/customers" class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            &larr; Back to Clients
+        </a>
+    </div>
+
+    <ng-template #failureOrLoading>
+        <ng-container *ngIf="errorMessage; else loading">
+            <div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600">
+                {{ errorMessage }}
+            </div>
+        </ng-container>
+        <ng-template #loading>
+            <div class="flex justify-center p-8">
+                <svg class="animate-spin h-8 w-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            </div>
+        </ng-template>
+    </ng-template>
+
+    <ng-container *ngIf="accounts$ | async as accounts; else failureOrLoading">
+
+        <div *ngIf="accounts.length === 0" class="text-center py-12 bg-gray-50 border border-gray-200 rounded-xl">
+            <p class="text-gray-500">This client does not have any active accounts yet.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let acc of accounts" class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+
+                <div class="absolute top-0 left-0 w-full h-1" [ngClass]="acc.type === 'CURR' ? 'bg-cyan-500' : 'bg-emerald-500'"></div>
+
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium" [ngClass]="acc.type === 'CURR' ? 'bg-cyan-100 text-cyan-800' : 'bg-emerald-100 text-emerald-800'">
+              {{ acc.type === 'CURR' ? 'Current Account' : 'Saving Account' }}
+            </span>
+                        <p class="text-gray-500 text-xs mt-2 font-mono" title="{{ acc.id }}">...{{ acc.id.substring(0, 12) }}</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-sm text-gray-500 mb-1">Balance</p>
+                    <p class="text-3xl font-bold text-gray-900">{{ acc.balance | number:'1.2-2' }} <span class="text-lg text-gray-400">MAD</span></p>
+                </div>
+
+                <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+                    <div class="text-sm">
+                        <span *ngIf="acc.type === 'CURR'" class="text-gray-500">Overdraft: <span class="text-gray-900 font-medium">{{ acc.overDraft }}</span></span>
+                        <span *ngIf="acc.type === 'SAVE'" class="text-gray-500">Interest: <span class="text-gray-900 font-medium">{{ acc.interestRate }}%</span></span>
+                    </div>
+                    <button (click)="handleViewOperations(acc)" class="text-gray-900 hover:text-black font-medium text-sm flex items-center gap-1">
+                        Operations &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
